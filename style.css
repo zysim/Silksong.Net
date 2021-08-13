@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'hollowknight';
+  src: url(assets/Trajan\ Pro\ Regular.ttf);
+}
+
+:root {
+  font-family: 'hollowknight';
+  --white: hsl(0, 0%, 97%);
+  --light-grey: hsl(0, 0%, 70%);
+  --grey: hsl(0, 0%, 45%);
+  --off-black: hsl(0, 0%, 12%);
+  --black: hsl(0, 0%, 4%);
+  --link-hover-light: var(--light-grey);
+  --link-hover-dark: var(--grey);
+  --link-active-light: var(--grey);
+  --link-active-dark: var(--off-black);
+  --link-inactive-light: var(--white);
+  --link-inactive-dark: var(--black);
+  background-color: var(--off-black);
+  color: var(--white);
+}
+
+/**
+ * Visually hide an element, but leave it available for screen readers
+ * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+#skip-main {
+  border: 0;
+  background-color: var(--black);
+  clip-path: polygon(0 0, 0% 0%, 0% 100%, 0 0%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  color: var(--white);
+}
+
+/**
+ * Extends the .screen-reader class to allow the element to be focusable when navigated to via the keyboard
+ * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * @link https://www.drupal.org/node/897638
+ */
+#skip-main:active,
+#skip-main:focus {
+  clip-path: unset;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  outline: 2px dashed var(--white);
+}
+
+header {
+  padding: 16px 0px;
+  background-color: var(--black);
+}
+
+header h1 {
+  margin: unset;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.tabindex:focus {
+  outline: none;
+}
+
+#main-nav {
+  width: 100%;
+  background-color: var(--white);
+}
+
+#main-nav ul {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-nav li {
+  border: solid 1px var(--black);
+  padding: 18px 12px;
+  list-style: none;
+}
+
+#main-nav a {
+  color: var(--link-inactive-dark);
+}
+
+#main-nav a:hover {
+  color: var(--link-hover-dark);
+}
+
+#main-nav a:active {
+  color: var(--link-active-dark);
+}
+
+#daily-silksong-news {
+  object-fit: contain;
+  width: 100%;
+}
+
+.fanart-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.fanart-container a {
+  align-self: flex-start;
+  color: var(--link-inactive-light);
+}
+
+.fanart-container a:hover {
+  align-self: flex-start;
+  color: var(--link-hover-light);
+}
+
+.fanart-container a:active {
+  align-self: flex-start;
+  color: var(--link-active-light);
+}
+
+footer {
+  border-top: solid 1px var(--white);
+  padding: 16px 0px;
+}
+
+footer a {
+  color: var(--link-inactive-light);
+}
+
+footer a:hover {
+  color: var(--link-hover-light);
+}
+
+footer a:active {
+  color: var(--link-active-light);
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 24px;
+  }
+
+  #daily-silksong-news {
+    width: 720px;
+  }
+
+  .fanart-container img {
+    width: 640px;
+  }
+
+  footer {
+    padding: 24px 0px;
+  }
+}
