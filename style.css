@@ -10,12 +10,21 @@
   --grey: hsl(0, 0%, 45%);
   --off-black: hsl(0, 0%, 12%);
   --black: hsl(0, 0%, 4%);
+
+  --deep-blue: hsl(230, 40%, 26%);
+  --deep-blue-shadow: hsl(230, 40%, 20%);
+
   --link-hover-light: var(--light-grey);
   --link-hover-dark: var(--grey);
   --link-active-light: var(--grey);
   --link-active-dark: var(--off-black);
   --link-inactive-light: var(--white);
   --link-inactive-dark: var(--black);
+
+  --nav-anchor-active-shadow: var(--light-grey);
+  --nav-anchor-current-background: var(--deep-blue);
+  --nav-anchor-current-active-shadow: var(--deep-blue-shadow);
+
   background-color: var(--off-black);
   color: var(--white);
 }
@@ -81,22 +90,16 @@ main {
   background-color: var(--white);
 }
 
-#main-nav ul {
-  padding: 0px;
-  margin: 0px;
+#main-nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
 
-#main-nav li {
+#main-nav a {
   border: solid 1px var(--black);
   padding: 18px 12px;
-  list-style: none;
-}
-
-#main-nav a {
   color: var(--link-inactive-dark);
 }
 
@@ -105,7 +108,22 @@ main {
 }
 
 #main-nav a:active {
+  box-shadow: inset 2px 2px 0px 0px var(--nav-anchor-active-shadow);
   color: var(--link-active-dark);
+}
+
+#main-nav a.current {
+  background-color: var(--nav-anchor-current-background);
+  color: var(--link-inactive-light);
+}
+
+#main-nav a.current:hover {
+  color: var(--link-hover-light);
+}
+
+#main-nav a.current:active {
+  box-shadow: inset 2px 2px 0px 0px var(--nav-anchor-current-active-shadow);
+  color: var(--link-active-light);
 }
 
 #daily-silksong-news {
@@ -116,6 +134,10 @@ main {
 .fanart-container {
   display: flex;
   flex-flow: column nowrap;
+}
+
+.fanart-container img {
+  width: 100%;
 }
 
 .fanart-container a {
