@@ -11,9 +11,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          ref: gh-pages
       - name: Update Daily Silksong News embed in index.html
         run: . ./updateDsnEmbedLink.sh $API_KEY
