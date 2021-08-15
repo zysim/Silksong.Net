@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-  - cron: "0 12 * * *" # Every day at 1200 UTC
+  - cron: "0 8 * * *" # Every day at 0800 UTC
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
