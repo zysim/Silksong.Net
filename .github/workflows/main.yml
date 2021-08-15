@@ -13,11 +13,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: actions/checkout@v2
         with:
           ref: gh-pages
       - name: Update Daily Silksong News embed in index.html
-        run: |
-          git checkout gh-pages
-          . updateDsnEmbedLink.sh $API_KEY
-          git checkout -
+        run: . updateDsnEmbedLink.sh $API_KEY
