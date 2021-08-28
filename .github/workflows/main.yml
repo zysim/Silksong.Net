@@ -22,7 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Update embed
-        run: . ./updateDsnEmbedLink.sh
+        run: . ./updateDsnEmbedLink.sh ${{ secrets.API_KEY }}
 #       - name: Switch from HTTPS to SSH
 #         run: git remote set-url origin ${{ secrets.ssh }}
       - name: Commit update
