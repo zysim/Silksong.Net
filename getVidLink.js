@@ -13,8 +13,6 @@ if (!API_KEY) {
   return 1
 }
 
-console.log(API_KEY)
-
 const req = https.request(
   {
     hostname: 'youtube.googleapis.com',
@@ -40,7 +38,6 @@ const req = https.request(
 
       res.on('end', () => {
         const dataFull = JSON.parse(Buffer.concat(dataRaw).toString())
-        console.log(dataFull)
         console.log(dataFull.items[0].id.videoId)
       })
     }
